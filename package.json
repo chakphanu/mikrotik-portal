@@ -1,0 +1,43 @@
+{
+  "name": "hotspot-radius",
+  "version": "1.0.0",
+  "description": "MikroTik Hotspot Captive External Portal with RADIUS support",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mikrotik",
+    "hotspot",
+    "radius",
+    "captive-portal"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "ioredis": "^5.6.0",
+    "radius": "^1.1.4",
+    "sequelize": "^6.37.6",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/express-ejs-layouts": "^2.5.4",
+    "@types/ioredis": "^4.28.10",
+    "@types/node": "^22.13.14",
+    "@types/radius": "^0.0.33",
+    "nodemon": "^3.1.9",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}

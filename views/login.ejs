@@ -1,0 +1,56 @@
+<div class="login-page">
+  <div class="welcome-message">
+    <h2>Welcome to <%= companyName %> WiFi</h2>
+    <p>You're just one click away from enjoying free internet access.</p>
+  </div>
+  
+  <% if (locals.error) { %>
+  <div class="error-message">
+    <strong>Error:</strong> <%= error %>
+  </div>
+  <% } %>
+  
+  <div class="advertisement">
+    <!-- Advertisement placeholder -->
+    <div class="ad-placeholder">
+      <h3>Special Offer!</h3>
+      <p>Check out our latest promotions and services.</p>
+    </div>
+  </div>
+  
+  <div class="login-form">
+    <form action="/connect" method="POST">
+      <input type="hidden" name="mac" value="<%= mac %>">
+      <input type="hidden" name="ip" value="<%= ip %>">
+      <input type="hidden" name="linkStatus" value="<%= linkStatus %>">
+      
+      <div class="terms-container">
+        <label>
+          <input type="checkbox" name="termsAccepted" required>
+          I agree to the <a href="#" class="terms-link">Terms and Conditions</a>
+        </label>
+      </div>
+      
+      <div class="connect-button-container">
+        <button type="submit" class="connect-button">Connect to Internet</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="terms-popup" id="termsPopup">
+    <div class="terms-content">
+      <h3>Terms and Conditions</h3>
+      <div class="terms-text">
+        <p>By using our WiFi service, you agree to the following terms:</p>
+        <ol>
+          <li>You will not use the service for any illegal activities.</li>
+          <li>You will not attempt to harm our network or other users.</li>
+          <li>We may collect data about your usage for operational purposes.</li>
+          <li>We reserve the right to terminate your access at any time.</li>
+          <li>We do not guarantee service availability or quality.</li>
+        </ol>
+      </div>
+      <button id="closeTerms">Close</button>
+    </div>
+  </div>
+</div>

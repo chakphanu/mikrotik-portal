@@ -1,0 +1,44 @@
+<div class="success-page">
+  <div class="success-message">
+    <div class="success-icon">✓</div>
+    <h2>Successfully Connected!</h2>
+    <p>You are now connected to the internet.</p>
+    <p>You will be redirected to the status page in <span id="countdown">5</span> seconds...</p>
+  </div>
+  
+  <div class="connection-details">
+    <h3>Connection Details:</h3>
+    <table class="details-table">
+      <tr>
+        <td>IP Address:</td>
+        <td><%= ip %></td>
+      </tr>
+      <tr>
+        <td>MAC Address:</td>
+        <td><%= mac %></td>
+      </tr>
+    </table>
+  </div>
+  
+  <div class="redirect-button">
+    <a href="<%= linkStatus %>" class="status-button">Go to Status Page Now</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let count = 5;
+    const countdown = document.getElementById('countdown');
+    const link = '<%= linkStatus %>';
+    
+    const timer = setInterval(function() {
+      count--;
+      countdown.textContent = count;
+      
+      if (count <= 0) {
+        clearInterval(timer);
+        window.location.href = link;
+      }
+    }, 1000);
+  });
+</script>
